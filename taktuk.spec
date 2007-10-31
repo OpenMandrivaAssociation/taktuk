@@ -1,5 +1,5 @@
 %define name taktuk
-%define version 3.0.2
+%define version 3.5.2
 %define release %mkrel 1
 %define lib_name_orig lib%{name}
 %define major 0
@@ -68,9 +68,9 @@ popd
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall
+%makeinstall pkgdocdir=%buildroot/%_defaultdocdir/%name-%version
 pushd Perl-Module
-%makeinstall_std
+%makeinstall_std pkgdocdir=%buildroot/%_defaultdocdir/%name-%version
 popd
 cp taktuk-light %buildroot/%{_bindir}/taktuk-light
 
@@ -89,6 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/taktuk-light
 %{_mandir}/man1/*
 %{_mandir}/man3/*
+%{_defaultdocdir}/%name-%version
 
 %files -n %{lib_name}
 %doc AUTHORS ChangeLog COPYING DISCLAIMER INSTALL NEWS README sample_session.txt TODO *.html
@@ -99,9 +100,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %{_libdir}/*.*a
 %{_includedir}/*
+%{_libdir}/pkgconfig/%name.pc
 
 %files -n %{pname}
 %doc AUTHORS ChangeLog COPYING DISCLAIMER INSTALL NEWS README sample_session.txt TODO *.html
 %{perl_vendorlib}/*
-
-
