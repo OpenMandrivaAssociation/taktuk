@@ -1,6 +1,6 @@
 %define name taktuk
 %define version 3.5.2
-%define release %mkrel 1
+%define release %mkrel 2
 %define lib_name_orig lib%{name}
 %define major 0
 %define lib_name %mklibname %name%{major}
@@ -13,7 +13,7 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source0: 	%{name}-%{version}.tar.gz
-License: 	GPL
+License: 	GPLv2+
 Group: 		Networking/Remote access
 url:		http://taktuk.gforge.inria.fr/
 BuildRoot:	 %{_tmppath}/%{name}-%{version}-%{release}-buildroot
