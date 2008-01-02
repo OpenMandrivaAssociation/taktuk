@@ -16,6 +16,7 @@ Source0: 	%{name}-%{version}.tar.gz
 License: 	GPLv2+
 Group: 		Networking/Remote access
 url:		http://taktuk.gforge.inria.fr/
+BuildRoot:	 %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:  autoconf, automake
 requires:	%{lib_name} = %version-%release
 Provides: 	parallel-tools
