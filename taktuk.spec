@@ -74,11 +74,9 @@ pushd Perl-Module
 popd
 cp taktuk-light %buildroot/%{_bindir}/taktuk-light
 
-%post -n %{lib_name}
-/sbin/ldconfig
+%post -n %{lib_name} -p /sbin/ldconfig
 
-%postun -n %{lib_name}
-/sbin/ldconfig
+%postun -n %{lib_name} -p /sbin/ldconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
