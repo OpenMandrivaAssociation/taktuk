@@ -1,6 +1,6 @@
 %define name taktuk
-%define version 3.5.2
-%define release %mkrel 7
+%define version 3.6.1
+%define release %mkrel 1
 %define lib_name_orig lib%{name}
 %define major 0
 %define lib_name %mklibname %name%{major}
@@ -8,18 +8,16 @@
 %define pname perl-%{module}
 
 
-Summary: 	Parallel, scalable launcher for cluster and lightweight grids
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source0: 	%{name}-%{version}.tar.gz
+Summary: 	Parallel, scalable launcher for cluster and lightweight grids
 License: 	GPLv2+
 Group: 		Networking/Remote access
 url:		http://taktuk.gforge.inria.fr/
-BuildRoot:	 %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:  autoconf, automake
-requires:	%{lib_name} = %version-%release
+Source0: 	https://gforge.inria.fr/frs/download.php/5255/%{name}-%{version}.tar.gz
 Provides: 	parallel-tools
+BuildRoot:	 %{_tmppath}/%{name}-%{version}
 
 %description
 TakTuk is a tool for deploying parallel remote executions of commands to a
@@ -59,7 +57,7 @@ Taktuk Perl Package
 %setup -q -n %name-%version
 
 %build
-%configure
+%configure2_5x
 %make
 pushd Perl-Module
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -67,12 +65,13 @@ pushd Perl-Module
 popd
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall pkgdocdir=%buildroot/%_defaultdocdir/%name-%version
 pushd Perl-Module
 %makeinstall_std pkgdocdir=%buildroot/%_defaultdocdir/%name-%version
 popd
 cp taktuk-light %buildroot/%{_bindir}/taktuk-light
+chmod 755 %buildroot/%{_bindir}/taktuk-light
 
 %if %mdkversion < 200900
 %post -n %{lib_name} -p /sbin/ldconfig
@@ -83,12 +82,12 @@ cp taktuk-light %buildroot/%{_bindir}/taktuk-light
 %endif
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%attr(755,root,root) %{_bindir}/taktuk
-%attr(755,root,root) %{_bindir}/taktuk-light
+%{_bindir}/taktuk
+%{_bindir}/taktuk-light
 %{_mandir}/man1/*
 %{_mandir}/man3/*
 %{_defaultdocdir}/%name-%version
