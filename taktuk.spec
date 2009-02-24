@@ -1,5 +1,5 @@
 %define name taktuk
-%define version 3.6.1
+%define version 3.6.2
 %define release %mkrel 1
 %define lib_name_orig lib%{name}
 %define major 0
