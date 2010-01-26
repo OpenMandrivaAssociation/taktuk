@@ -1,5 +1,5 @@
 %define name taktuk
-%define version 3.6.2
+%define version 3.7
 %define release %mkrel 2
 %define lib_name_orig lib%{name}
 %define major 0
@@ -60,7 +60,7 @@ Taktuk Perl Package
 %configure2_5x
 %make
 pushd Perl-Module
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+%{__perl} Makefile.PL INSTALLDIRS=vendor DESTDIR=%buildroot
 %make
 popd
 
@@ -68,7 +68,7 @@ popd
 rm -rf %{buildroot}
 %makeinstall pkgdocdir=%buildroot/%_defaultdocdir/%name-%version
 pushd Perl-Module
-%makeinstall_std pkgdocdir=%buildroot/%_defaultdocdir/%name-%version
+%makeinstall pkgdocdir=%buildroot/%_defaultdocdir/%name-%version
 popd
 cp taktuk-light %buildroot/%{_bindir}/taktuk-light
 chmod 755 %buildroot/%{_bindir}/taktuk-light
