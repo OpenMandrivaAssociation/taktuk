@@ -1,8 +1,8 @@
 %define name taktuk
-%define version 3.7
-%define release 4
+%define version 3.7.4
+%define release 1
 %define lib_name_orig lib%{name}
-%define major 0
+%define major 2
 %define lib_name %mklibname %name%{major}
 %define module %name
 %define pname perl-%{module}
