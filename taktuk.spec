@@ -90,7 +90,7 @@ chmod 755 %buildroot/%{_bindir}/taktuk-light
 %{_libdir}/pkgconfig/%name.pc
 
 %files -n %{pname}
-%doc AUTHORS ChangeLog COPYING DISCLAIMER INSTALL NEWS README sample_session.txt TODO *.html
+%doc AUTHORS ChangeLog COPYING DISCLAIMER INSTALL NEWS README TODO *.html
 %{perl_vendorlib}/*
 
 
