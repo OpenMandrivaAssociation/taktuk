@@ -80,7 +80,7 @@ chmod 755 %buildroot/%{_bindir}/taktuk-light
 %{_defaultdocdir}/%name-%version
 
 %files -n %{lib_name}
-%doc AUTHORS ChangeLog COPYING DISCLAIMER INSTALL NEWS README sample_session.txt TODO *.html
+%doc AUTHORS ChangeLog COPYING DISCLAIMER INSTALL NEWS README TODO *.html
 %defattr(-,root,root)
 %{_libdir}/*.so*
 
