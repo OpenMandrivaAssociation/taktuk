@@ -7,7 +7,7 @@
 
 Name: 		taktuk
 Version: 	3.7.5
-Release: 	1
+Release: 	2
 Summary: 	Parallel, scalable launcher for cluster and lightweight grids
 License: 	GPLv2+
 Group: 		Networking/Remote access
