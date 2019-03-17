@@ -79,6 +79,7 @@ chmod 755 %buildroot/%{_bindir}/taktuk-light
 
 %files -n %{lib_name}
 %doc AUTHORS ChangeLog COPYING DISCLAIMER INSTALL NEWS README TODO
+%{_datadir}/doc/%{name}-%{version}/*
 %{_libdir}/*.so*
 
 %files -n %{lib_name}-devel
