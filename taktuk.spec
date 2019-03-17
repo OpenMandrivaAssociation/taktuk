@@ -78,7 +78,7 @@ chmod 755 %buildroot/%{_bindir}/taktuk-light
 #{_defaultdocdir}/%name-%version
 
 %files -n %{lib_name}
-%doc AUTHORS ChangeLog COPYING DISCLAIMER INSTALL NEWS README TODO *.html
+%doc AUTHORS ChangeLog COPYING DISCLAIMER INSTALL NEWS README TODO
 %{_libdir}/*.so*
 
 %files -n %{lib_name}-devel
@@ -86,5 +86,5 @@ chmod 755 %buildroot/%{_bindir}/taktuk-light
 %{_libdir}/pkgconfig/%name.pc
 
 %files -n %{pname}
-%doc AUTHORS ChangeLog COPYING DISCLAIMER INSTALL NEWS README TODO *.html
+%doc AUTHORS ChangeLog COPYING DISCLAIMER INSTALL NEWS README TODO
 %{perl_vendorlib}/*
