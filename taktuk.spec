@@ -6,8 +6,8 @@
 
 
 Name: 		taktuk
-Version: 	3.7.5
-Release: 	4
+Version: 	3.7.7
+Release: 	1
 Summary: 	Parallel, scalable launcher for cluster and lightweight grids
 License: 	GPLv2+
 Group: 		Networking/Remote access
@@ -59,13 +59,13 @@ Taktuk Perl Package
 %make
 pushd Perl-Module
 %{__perl} Makefile.PL INSTALLDIRS=vendor DESTDIR=%buildroot
-%make
+%make_build
 popd
 
 %install
-%makeinstall pkgdocdir=%buildroot/%_defaultdocdir/%name-%version
+%make_install pkgdocdir=%buildroot/%_defaultdocdir/%name-%version
 pushd Perl-Module
-%makeinstall pkgdocdir=%buildroot/%_defaultdocdir/%name-%version
+%make_install pkgdocdir=%buildroot/%_defaultdocdir/%name-%version
 popd
 cp taktuk-light %buildroot/%{_bindir}/taktuk-light
 chmod 755 %buildroot/%{_bindir}/taktuk-light
