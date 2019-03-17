@@ -54,6 +54,10 @@ Taktuk Perl Package
 %prep
 %setup -q -n %name-%version
 
+# FIXME for correct assignment of rights of files and for file-not-utf8
+chmod 0644 {AUTHORS,README,NEWS,COPYING,TODO}
+iconv -f iso8859-1 -t utf-8 AUTHORS > AUTHORS.conv && mv -f AUTHORS.conv AUTHORS
+
 %build
 %configure2_5x
 %make
@@ -71,12 +75,11 @@ cp taktuk-light %buildroot/%{_bindir}/taktuk-light
 chmod 755 %buildroot/%{_bindir}/taktuk-light
 
 %files
-%doc AUTHORS ChangeLog COPYING DISCLAIMER INSTALL NEWS README TODO
+%doc %{_defaultdocdir}/%{name}
 %{_bindir}/taktuk
 %{_bindir}/taktuk-light
 %{_mandir}/man1/*
 %{_mandir}/man3/*
-#{_defaultdocdir}/%name-%version
 
 
 %files -n %{lib_name}
