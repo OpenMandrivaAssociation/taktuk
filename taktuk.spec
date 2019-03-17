@@ -71,12 +71,13 @@ cp taktuk-light %buildroot/%{_bindir}/taktuk-light
 chmod 755 %buildroot/%{_bindir}/taktuk-light
 
 %files
+%doc AUTHORS ChangeLog COPYING DISCLAIMER INSTALL NEWS README TODO
 %{_bindir}/taktuk
 %{_bindir}/taktuk-light
 %{_mandir}/man1/*
 %{_mandir}/man3/*
 #{_defaultdocdir}/%name-%version
-%{_datadir}/doc/%{name}-%{version}/*
+
 
 %files -n %{lib_name}
 %doc AUTHORS ChangeLog COPYING DISCLAIMER INSTALL NEWS README TODO
