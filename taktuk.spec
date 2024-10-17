@@ -11,7 +11,7 @@ Release: 	1
 Summary: 	Parallel, scalable launcher for cluster and lightweight grids
 License: 	GPLv2+
 Group: 		Networking/Remote access
-Url:		http://taktuk.gforge.inria.fr/
+Url:		https://taktuk.gforge.inria.fr/
 Source0:	https://gforge.inria.fr/frs/download.php/33412/%{name}-%{version}.tar.gz
 Source1:	taktuk.rpmlintrc
 Provides:	parallel-tools
