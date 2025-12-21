@@ -15,6 +15,11 @@ Url:		https://taktuk.gforge.inria.fr/
 Source0:	https://gforge.inria.fr/frs/download.php/33412/%{name}-%{version}.tar.gz
 Source1:	taktuk.rpmlintrc
 Provides:	parallel-tools
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	perl-devel
 
 %description
